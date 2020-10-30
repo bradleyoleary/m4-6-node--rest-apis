@@ -17,3 +17,30 @@ Write out each endpoint, its method, and brief description of waht it should do.
 _This activity is more about the discussion in how to best organize data endpoints. There will not be any coding._
 
 ## Your Answer
+
+//stock
+
+| `/stock` | `GET` | Retrieves a list stock items. |
+| `/stock/:id` | `GET` | Retrieves a specific stock item by ID. |
+| `/stock` | `POST` | Creates a new stock item. |
+| `/stock/:id` | `PUT` | Update/modify entire stock item by ID |
+| `/stock/:id` | `PATCH` | Partially updates stock item ID. |
+| `/stock/:id` | `DELETE` | Deletes a stock item by ID. |
+
+//customers
+
+| `/customers` | `GET` | Retrieves a list customers. |
+| `/customers/:id` | `GET` | Retrieves a specific customer by ID. |
+| `/customers` | `POST` | Creates a new customer. |
+| `/customers/:id` | `PUT` | Update/modify an existing customer by ID |
+| `/customers/:id` | `PATCH` | Partially updates an exisiting customer by ID. |
+| `/customers/:id` | `DELETE` | Deletes an existing customer. |
+
+//seating
+
+| `/seating` | `GET` | Retrieves a list of seating furniture. |
+| `/seating/:id` | `GET` | Retrieves a specific stock item by ID. |
+| `/seating/` | `POST` | Creates new seating furniture. |
+| `/seating/:id` | `PUT` | Update/modify furniture by ID. |
+| `/seating/:id` | `PATCH` | Partially updates futinure by ID. |
+| `/seating/:id` | `DELETE` | Deletes furniture for seating. |
