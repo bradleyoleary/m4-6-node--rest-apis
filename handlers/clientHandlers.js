@@ -45,19 +45,23 @@ const handleCreateNewClient = (req, res) => {
 
 //Delete current client with DELETE method
 const handleDeleteClient = (req, res) => {
-    let found = false;
-    clients.forEach((client) => {
-        //console.log(client)
-        if (client.id === req.params.id) {
-            //console.log(req.params.id)
-            res.status(200).json({ status: 200, data: client })
-            found = true
-        }
-    });
-    if (!found) {
-        res.status(400).json({ status: 400, error: 'Cannot find this client.' })
-    };
-}
+    const { id } = req.params;
+    let clientExists = false;
+    let index = null
+    clients.forEach((client, i) => {
+      if (client.id === id) {
+        clientExists = true;
+        index = i;
+      }
+    })
+    if (clientExists) {
+      clients.splice(index, 1);
+      //console.log(clients)
+      res.status(202).json({ status: 202, data: id, error: 'This client has been deleted.' })
+    } else {
+      res.status(400).json({ status: 400, data: id, error: 'Client not found. Cannot delete.' })
+    }
+  };
 
 
 module.exports = { handleAllClients, handleGetClientById, handleCreateNewClient, handleDeleteClient }
